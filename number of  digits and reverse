@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int x,y,rem,rev=0,count=0;
+    printf("input term\n");
+    scanf("%d",&x);
+    y=x;
+    while(x!=0){
+      x=x/10;
+      count++;
+      }
+    while(y!=0){
+        rem=y%10;
+        rev=rev*10+rem;
+        y=y/10;
+    }  
+    printf("number of digit = %d\n reverse of the number is = %d",count,rev);
+      
+      
+
+    return 0;
+}
