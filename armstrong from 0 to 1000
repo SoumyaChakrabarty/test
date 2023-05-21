@@ -1,42 +1,30 @@
+// Online C compiler to run C program online
 #include <stdio.h>
 #include <math.h>
-
-int isArmstrong(int num) {
-    int originalNum, remainder, digits = 0, result = 0;
-
-    originalNum = num;
-
-    // Count the number of digits
-    while (originalNum != 0) {
-        originalNum /= 10;
-        digits++;
-    }
-
-    originalNum = num;
-
-    // Calculate the result
-    while (originalNum != 0) {
-        remainder = originalNum % 10;
-        result += pow(remainder, digits);
-        originalNum /= 10;
-    }
-
-    // If the number is Armstrong, return 1; otherwise, return 0
-    if (result == num)
-        return 1;
-    else
-        return 0;
-}
-
 int main() {
-    int num;
-
+    int i,num,rem,digits,result;
     printf("Armstrong numbers between 0 and 1000:\n");
 
-    for (num = 0; num <= 1000; num++) {
-        if (isArmstrong(num))
-            printf("%d\n", num);
+for(i=0;i<=1000;i++){
+        num=i;
+        digits=0;
+        result=0;
+        while(num!=0){
+            num/=10;
+            digits++;
+        }
+        num=i;
+        while(num!=0) {
+            rem=num%10;
+            result = result + pow(rem, digits);
+            num/=10;
+        }
+
+        if (result==i)
+            printf("%d ",i);
     }
 
     return 0;
 }
+
+
