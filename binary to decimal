@@ -1,0 +1,17 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    long long int n;
+    int rem,i=0,dec=0;
+    printf("Enter a binary number ");
+    scanf("%lld",&n);
+    while(n>0){
+        rem=n%10;
+        n=n/10;
+        dec=dec+rem*pow(2,i);++i;
+    }
+  printf("%d",dec);
+    return 0;
+}
