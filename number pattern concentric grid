@@ -1,4 +1,6 @@
 // METHOD 1 - by array (me)
+
+
 #include <stdio.h>
 
 int main() {
