@@ -1,0 +1,40 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    
+    
+    int dimension;
+    scanf("%d",&dimension);
+    int A[dimension][dimension];
+    int row1=0,col1=0,row2=dimension-1,col2=dimension-1,term=1;
+    while(term<=(dimension*dimension))
+    {
+        for(int i=col1;i<=col2;i++)
+        {A[row1][i]=term++;}
+        for(int j=row1+1;j<=row2;j++)
+          {A[j][col2]=term++;}
+        for(int i=col2-1;i>=col1;i--)
+        {
+            A[row2][i]=term++;
+        }
+        for(int j=row2-1;j>=row1+1;j--)
+        {
+            A[j][col1]=term++;
+        }
+        row1++;row2--;col1++;col2--;
+    }
+   for(int i=0; i<dimension; i++)
+    {
+      for(int j=0;j<dimension;j++)
+      {
+         printf("%d \t", A[i][j]);
+      }
+
+            printf("\n");
+         }
+    
+    
+
+    return 0;
+}
