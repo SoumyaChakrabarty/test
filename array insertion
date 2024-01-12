@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+
+int main(){
+    
+    int array[15] = { 1, 3, 5, 7, 4 };  
+    int n = 5; // n = array size 
+  
+    printf("Before insertion : ");  
+    for (int i = 0; i < n; i++)  
+        printf("%d ", array[i]);  
+  
+    int x = 9, pos = 3;  // that means add 9 at index no, 3  
+  
+    insert(array, n, x, pos);  
+    n++; //because no of element is increased. otherwise last element exeeds
+  
+    printf("\nAfter insertion : ");  
+    for (int i = 0; i < n; i++)  
+        printf("%d ", array[i]);  
+  
+    return 0;  
+}
+
+
+void insert(int array[], int n, int x, int pos)  
+{  
+    for (int i = n - 1; i >= pos; i--)  
+        array[i + 1] = array[i];  
+  
+    array[pos] = x;  
+}  
