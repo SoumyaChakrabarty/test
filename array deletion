@@ -1,0 +1,49 @@
+#include <stdio.h>  
+  
+  
+int main(){
+    
+    int i, n = 5;  
+    int array[] = { 20, 60, 40, 50, 30 };  
+  
+    int key = 40;  // this element is to delete.
+  
+    printf("Array before deletion\n");  
+    for (i = 0; i < n; i++)  
+        printf("%d ", array[i]);  
+      
+    n = delete(array, n, key);  
+  
+    printf("\nArray after deletion\n");  
+    for (i = 0; i < n; i++)  
+        printf("%d ", array[i]);  
+  
+    return 0;  
+} 
+
+
+int delete(int array[], int n, int key){
+    
+    int pos = find(array, n, key);  
+  
+    if (pos == -1) {  
+        printf("Element not found");  
+        return n;  
+    }  
+  
+    int i;  
+    for (i = pos; i < n - 1; i++)  
+        array[i] = array[i + 1];  
+  
+    return n - 1;  
+} 
+
+int find(int array[], int n, int key){
+    
+    int i;  
+    for (i = 0; i < n; i++)  
+        if (array[i] == key)  
+            return i;  
+  
+    return -1;  
+}  
